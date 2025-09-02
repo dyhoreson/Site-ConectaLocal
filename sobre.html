@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConectaLocal - Encontre Profissionais de Confiança</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #2c2c2c;
+      line-height: 1.6;
+    }
+
+    section#sobre {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #1e3a8a;
+    }
+
+    .bloco {
+      background: #fff;
+      margin-bottom: 40px;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 0.8s ease;
+    }
+
+    .bloco.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bloco h3 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: #1d4ed8;
+    }
+
+    .bloco p {
+      font-size: 1rem;
+      color: #444;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .bloco {
+        padding: 25px;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- CABEÇALHO DO SITE -->
+  <header class="cabecalho-site">
+    <div class="container">
+      <!-- Área interna do cabeçalho: logo + navegação -->
+      <div class="conteudo-cabecalho">
+        <!-- Logotipo/Marca do site -->
+        <div class="logo-site">ConectaLocal</div>
+        <!-- Links de navegação -->
+        <nav class="links-navegacao">
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre Nossa Empresa</a>
+          <a href="fornecedores.html">Profissionais</a>
+          <a href="formes.html" class="botao-cta-cabecalho" id="anunciar">Anunciar Grátis</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+
+
+<section id="sobre">
+    <h2>Sobre a ConectaLocal</h2>
+
+    <div class="bloco">
+      <h3>Nossa Origem</h3>
+      <p>
+        Nascemos no coração do Nordeste, em Natal-RN, há 15 anos. A partir de um sonho regional,
+        transformamos a necessidade de conectar pessoas a prestadores de serviços em uma realidade acessível e confiável.
+      </p>
+    </div>
+
+    <div class="bloco">
+      <h3>Crescimento Nacional</h3>
+      <p>
+        Há 10 anos expandimos nossas atividades para todo o Brasil, levando nossa missão de ser a ponte
+        entre quem precisa de um serviço e quem pode oferecer com qualidade, dedicação e confiança.
+      </p>
+    </div>
+
+    <div class="bloco">
+      <h3>Nossa Missão</h3>
+        <div class="video">
+        <video class="video" width="640" height="360" controls = "play" src="/video/Timeline 1.mp4"></video>
+        </div>
+    </div>
+
+    <div class="bloco">
+      <h3>Nosso Compromisso</h3>
+      <p>
+        Transparência, confiança e inovação. Esses são os pilares que guiam nossa jornada e garantem
+        que milhares de pessoas encontrem diariamente os serviços que precisam.
+      </p>
+    </div>
+  </section>
+
+
+  
+  
+
+  <!-- RODAPÉ DO SITE -->
+  <footer class="rodape-site">
+    <div class="container">
+      <div class="topo-rodape">
+        <div class="marca-rodape">
+          <h3>ConectaLocal</h3>
+          <p>Conectando pessoas aos melhores profissionais.</p>
+        </div>
+        <div class="nav-rodape">
+          <a href="index.html">Início</a>
+          <a href="#beneficios">Benefícios</a>
+          <a href="formes.html">Anunciar</a>
+        </div>
+      </div>
+      <div class="base-rodape">
+        <p>&copy; 2024 ConectaLocal. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+
+   <script>
+    // Animação com Intersection Observer
+    const blocos = document.querySelectorAll('.bloco');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    blocos.forEach(bloco => {
+      observer.observe(bloco);
+    });
+  </script>
+
+  <script src="index.js">  </script>
+</body>
+</html>

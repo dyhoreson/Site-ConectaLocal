@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConectaLocal - Encontre Profissionais de Confiança</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- CABEÇALHO DO SITE -->
+  <header class="cabecalho-site">
+    <div class="container">
+      <!-- Área interna do cabeçalho: logo + navegação -->
+      <div class="conteudo-cabecalho">
+        <!-- Logotipo/Marca do site -->
+        <div class="logo-site">ConectaLocal</div>
+        <!-- Links de navegação -->
+        <nav class="links-navegacao">
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre Nossa Empresa</a>
+          <a href="fornecedores.html">Profissionais</a>
+          <a href="formes.html" class="botao-cta-cabecalho" id="anunciar">Anunciar Grátis</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+
+
+  <div class="container_formes">
+    <h1>Cadastro de Fornecedor 🛠️</h1>
+
+    <div class="form-card">
+      <form id="form-fornecedor">
+        
+        <div class="campo">
+          <label for="descricao">Descrição</label>
+          <input type="text" id="descricao" name="descricao" placeholder="Digite a descrição">
+        </div>
+
+        <div class="campo">
+          <label for="categoria">Categoria</label>
+          <input type="text" id="categoria" name="categoria" placeholder="Digite a categoria">
+        </div>
+
+        <div class="campo">
+          <label for="contato">Contato</label>
+          <input type="text" id="contato" name="contato" placeholder="Telefone ou e-mail">
+        </div>
+
+        <div class="campo">
+          <label for="nome_anunciante">Nome do Anunciante</label>
+          <input type="text" id="nome_anunciante" name="nome_anunciante" placeholder="Digite o nome do anunciante">
+        </div>
+
+        <div class="campo">
+          <label for="cpf_cnpj">CPF / CNPJ</label>
+          <input type="text" id="cpf_cnpj" name="cpf_cnpj" placeholder="Digite o CPF ou CNPJ">
+        </div>
+
+        <div class="grupo-horario">
+          <div class="campo">
+            <label for="hora_inicio">Hora Início</label>
+            <input type="time" id="hora_inicio" name="hora_inicio">
+          </div>
+          <div class="campo">
+            <label for="hora_fim">Hora Fim</label>
+            <input type="time" id="hora_fim" name="hora_fim">
+          </div>
+        </div>
+
+     
+        
+
+        <div class="acoes">
+          <button type="submit">Cadastrar</button>
+          <button type="reset" class="btn-secondary">Limpar</button>
+        </div>
+
+      </form>
+
+      <p id="resposta" class="mensagem"></p>
+    </div>
+  </div>
+
+
+
+  
+
+  <!-- RODAPÉ DO SITE -->
+  <footer class="rodape-site">
+    <div class="container">
+      <div class="topo-rodape">
+        <div class="marca-rodape">
+          <h3>ConectaLocal</h3>
+          <p>Conectando pessoas aos melhores profissionais.</p>
+        </div>
+        <div class="nav-rodape">
+          <a href="index.html">Início</a>
+          <a href="#beneficios">Benefícios</a>
+          <a href="formes.html">Anunciar</a>
+        </div>
+      </div>
+      <div class="base-rodape">
+        <p>&copy; 2024 ConectaLocal. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="forms.js">  </script>
+</body>
+</html>

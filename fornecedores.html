@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConectaLocal - Encontre Profissionais de Confiança</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+  <!-- CABEÇALHO DO SITE -->
+  <header class="cabecalho-site">
+    <div class="container">
+      <!-- Área interna do cabeçalho: logo + navegação -->
+      <div class="conteudo-cabecalho">
+        <!-- Logotipo/Marca do site -->
+        <div class="logo-site">ConectaLocal</div>
+        <!-- Links de navegação -->
+        <nav class="links-navegacao">
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre Nossa Empresa</a>
+          <a href="fornecedores.html">Profissionais</a>
+          <a href="formes.html" class="botao-cta-cabecalho" id="anunciar">Anunciar Grátis</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+
+
+
+<!-- SEÇÃO DE PRESTADORES (FORNECEDORES) -->
+  <section id="fornecedores" class="secao-prestadores">
+    <div class="container">
+      <!-- Introdução da seção -->
+      <div class="introducao-prestadores">
+        <div>
+          <h2 class="titulo-secao">Profissionais Cadastrados</h2>
+          <p class="subtitulo-secao">Conheça nossos prestadores de serviço</p>
+        </div>
+      </div>
+
+
+
+<!-- SELECT de categorias -->
+<select id="filtro-categoria" class="categoria00">
+  <option value="todos">Todas as Categorias</option>
+  <option value="Educação">Educação</option>
+  <option value="Tecnologia">Tecnologia</option>
+  <option value="Design">Design</option>
+  <option value="Marketing">Marketing</option>
+  <option value="Casa e Jardim">Casa e Jardim</option>
+  <option value="Serviços Gerais">Serviços Gerais</option>
+  <option value="Eventos">Eventos</option>
+  <option value="Gastronomia">Gastronomia</option>
+  <option value="Pets">Pets</option>
+  <option value="Audiovisual">Audiovisual</option>
+  <option value="Construção">Construção</option>
+  <option value="Consultoria">Consultoria</option>
+  <option value="Línguas">Línguas</option>
+  <option value="Editorial">Editorial</option>
+  <option value="Comunicação">Comunicação</option>
+  <option value="Saúde">Saúde</option>
+  <option value="Moda">Moda</option>
+  <option value="Beleza">Beleza</option>
+  <option value="Esporte">Esporte</option>
+  <option value="Transporte">Transporte</option>
+  <option value="Turismo">Turismo</option>
+</select>
+
+
+
+
+      <!-- Caixa de pesquisa por nome -->
+      <div class="caixa-pesquisa">
+        <input id="busca-nome" type="search" placeholder="Buscar por nome do profissional..." />
+      </div>
+
+      <!-- Lista (grade) onde os cartões de prestadores serão inseridos via JavaScript -->
+      <div id="fornecedores-container" class="lista-prestadores">
+        <!-- Os prestadores serão carregados aqui via JS -->
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+<!-- SELECT de categorias -->
+<select id="filtro-categoria" class="categoria00">
+  <option value="todos">Todas as Categorias</option>
+  <option value="Educação">Educação</option>
+  <option value="Tecnologia">Tecnologia</option>
+  <option value="Design">Design</option>
+  <option value="Marketing">Marketing</option>
+  <option value="Casa e Jardim">Casa e Jardim</option>
+  <option value="Serviços Gerais">Serviços Gerais</option>
+  <option value="Eventos">Eventos</option>
+  <option value="Gastronomia">Gastronomia</option>
+  <option value="Pets">Pets</option>
+  <option value="Audiovisual">Audiovisual</option>
+  <option value="Construção">Construção</option>
+  <option value="Consultoria">Consultoria</option>
+  <option value="Línguas">Línguas</option>
+  <option value="Editorial">Editorial</option>
+  <option value="Comunicação">Comunicação</option>
+  <option value="Saúde">Saúde</option>
+  <option value="Moda">Moda</option>
+  <option value="Beleza">Beleza</option>
+  <option value="Esporte">Esporte</option>
+  <option value="Transporte">Transporte</option>
+  <option value="Turismo">Turismo</option>
+</select>
+
+
+<!-- Container para os fornecedores -->
+<div id="fornecedores-container"></div>
+
+
+
+
+
+
+<!-- POPUP -->
+<div class="overlay" id="overlay" style="display:none;">
+  <div class="popup">
+    <span class="close-btn" id="fecharPopup">&times;</span>
+    <h2 id="popupTitulo">Carregando...</h2>
+    <p id="popupDescricao"></p>
+    <p><strong>Contato:</strong> <span id="popupContato"></span></p>
+    <p><strong>Horário:</strong> <span id="popupHorario"></span></p>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  
+
+  <!-- RODAPÉ DO SITE -->
+  <footer class="rodape-site">
+    <div class="container">
+      <div class="topo-rodape">
+        <div class="marca-rodape">
+          <h3>ConectaLocal</h3>
+          <p>Conectando pessoas aos melhores profissionais.</p>
+        </div>
+        <div class="nav-rodape">
+          <a href="index.html">Início</a>
+          <a href="#beneficios">Benefícios</a>
+          <a href="formes.html">Anunciar</a>
+        </div>
+      </div>
+      <div class="base-rodape">
+        <p>&copy; 2024 ConectaLocal. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js">  </script>
+  
+</body>
+</html>

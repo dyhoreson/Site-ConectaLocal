@@ -1,0 +1,694 @@
+/* =========================================================
+   Reset básico: garante consistência de espaçamentos
+   ========================================================= */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* =========================================================
+     Variáveis de tema (cores, sombras, raios)
+     - Facilita trocar cores em um só lugar
+     ========================================================= */
+  :root {
+    --cor-primaria: #1e66f5;
+    --cor-primaria-escura: #1753c4;
+    --cor-secundaria: #ff6b35;
+    --cor-texto: #2b2d33;
+    --cor-texto-claro: #667085;
+    --cor-fundo: #ffff;
+    --cor-fundo-claro: #f8fafc;
+    --fundo-inicial: linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 100%);
+    --cor-borda: #e2e8f0;
+    --sombra: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --sombra-grande: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --raio-borda: 12px;
+  }
+  
+  /* =========================================================
+     Estilos gerais do corpo do site
+     ========================================================= */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background: var(--cor-fundo);
+  }
+  
+  /* Container centralizado com largura máxima */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* =========================================================
+     Cabeçalho do site (fixo no topo)
+     ========================================================= */
+  .cabecalho-site {
+    background: var(--cor-fundo);
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  /* Área interna do cabeçalho: alinha logo e navegação */
+  .conteudo-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  
+  /* Logotipo do site */
+  .logo-site {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-primaria);
+  }
+  
+  /* Links de navegação (menu) */
+  .links-navegacao {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .links-navegacao a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .links-navegacao a:hover {
+    color: var(--cor-primaria);
+  }
+  
+  /* Botão do cabeçalho (CTA) */
+  .botao-cta-cabecalho {
+    background: var(--cor-primaria);
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: var(--raio-borda);
+    transition: background 0.3s;
+  }
+  
+  .botao-cta-cabecalho:hover {
+    background: var(--cor-primaria-escura);
+  }
+  
+  /* =========================================================
+     Seção inicial (destaque)
+     ========================================================= */
+  .secao-inicial {
+    background: var(--fundo-inicial);
+    padding: 4rem 0;
+    min-height: 70vh;            /* altura mínima confortável */
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Layout de duas colunas (texto | imagem) */
+  .layout-inicial {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  /* Título principal da página */
+  .texto-inicial h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--cor-texto);
+  }
+  
+  /* Subtítulo explicativo abaixo do título */
+  .subtitulo-inicial {
+    font-size: 1.1rem;
+    color: var(--cor-texto-claro);
+    margin-bottom: 2rem;
+  }
+  
+  /* Área dos botões principais (ver e anunciar) */
+  .acoes-iniciais {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  /* Botão principal (cor sólida) */
+  .botao-primario {
+    background: var(--cor-primaria);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--raio-borda);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+  }
+  
+  .botao-primario:hover {
+    background: var(--cor-primaria-escura);
+  }
+  
+  /* Botão secundário (borda) */
+  .botao-secundario {
+    background: white;
+    color: var(--cor-primaria);
+    border: 2px solid var(--cor-primaria);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--raio-borda);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+  
+  .botao-secundario:hover {
+    background: var(--cor-primaria);
+    color: white;
+  }
+  
+  /* Imagem ilustrativa da seção inicial */
+  .imagem-inicial img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--raio-borda);
+  }
+  
+  /* =========================================================
+     Títulos de seção (reutilizável)
+     ========================================================= */
+  .titulo-secao {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--cor-texto);
+  }
+  
+  /* Subtítulo padrão de seção */
+  .subtitulo-secao {
+    color: var(--cor-texto-claro);
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  /* =========================================================
+     Seção de benefícios
+     ========================================================= */
+  .secao-beneficios {
+    padding: 4rem 0;
+    background: var(--cor-fundo);
+  }
+  
+  /* Grade de cartões de benefícios (responsiva) */
+  .lista-beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Cartão de benefício individual */
+  .cartao-beneficio {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra);
+  }
+  
+  /* Ícone do benefício dentro de um círculo/quadro */
+  .icone-beneficio {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .icone-beneficio img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Título do benefício */
+  .cartao-beneficio h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--cor-texto);
+  }
+  
+  /* =========================================================
+     Seção "Como funciona"
+     ========================================================= */
+  .secao-como-funciona {
+    padding: 4rem 0;
+    background: var(--cor-fundo-claro);
+  }
+  
+  /* Lista de cards de passos (grid responsivo) */
+  .lista-passos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Cartão de um passo */
+  .cartao-passo {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  /* Círculo com o número do passo */
+  .numero-passo {
+    width: 60px;
+    height: 60px;
+    background: var(--cor-primaria);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+  }
+  
+  /* =========================================================
+     Seção de prestadores (fornecedores)
+     ========================================================= */
+  .secao-prestadores {
+    padding: 4rem 0;
+    background: var(--cor-fundo);
+  }
+  
+  /* Cabeçalho/introdução da seção */
+  .introducao-prestadores {
+    margin-bottom: 3rem;
+  }
+  
+  /* Caixa da barra de pesquisa */
+  .caixa-pesquisa {
+    max-width: 540px;
+    margin: 0 auto 1.5rem;
+  }
+  
+  /* Campo de busca por nome */
+  .caixa-pesquisa input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+    outline: none;
+  }
+  
+  /* Destaque no foco do campo de busca */
+  .caixa-pesquisa input:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(30, 102, 245, 0.12);
+  }
+  
+  /* Grade que organiza os cartões de prestadores */
+  .lista-prestadores {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Cartão de prestador individual */
+  .cartao-prestador {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra);
+    transition: transform 0.3s;
+  }
+  
+  /* Efeito leve ao passar o mouse no cartão */
+  .cartao-prestador:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Cabeçalho do cartão (categoria/etiqueta) */
+  .cabecalho-cartao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Etiqueta (tag) da categoria do prestador */
+  .etiqueta-prestador {
+    background: var(--cor-primaria);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+  }
+  
+  /* Nome do prestador */
+  .titulo-prestador {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--cor-texto);
+  }
+  
+  /* Descrição do serviço */
+  .descricao-prestador {
+    color: var(--cor-texto-claro);
+    margin-bottom: 1rem;
+  }
+  
+  /* Bloco com detalhes (contato/horário) */
+  .detalhes-prestador {
+    margin-bottom: 1rem;
+  }
+  
+  /* Linhas de contato e horário */
+  .info-contato,
+  .info-horario {
+    font-size: 0.9rem;
+    color: var(--cor-texto-claro);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Botão principal "Entrar em Contato" */
+  .botao-contato-primario {
+    background: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--raio-borda);
+    cursor: pointer;
+    font-weight: 500;
+    width: 100%;
+    transition: background 0.3s;
+  }
+  
+  .botao-contato-primario:hover {
+    background: #e55a2b;
+  }
+  
+  /* =========================================================
+     Rodapé do site
+     ========================================================= */
+  .rodape-site {
+    background: var(--cor-texto);
+    color: white;
+    padding: 2rem 0;
+  }
+  
+  /* Parte de cima do rodapé: marca + navegação */
+  .topo-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Marca (título) do rodapé */
+  .marca-rodape h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Links do rodapé */
+  .nav-rodape {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-rodape a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  
+  .nav-rodape a:hover {
+    opacity: 1;
+  }
+  
+  /* Base do rodapé: direitos autorais */
+  .base-rodape {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.7;
+  }
+  
+  /* =========================================================
+     Estados de interface (carregando, erro, vazio)
+     ========================================================= */
+  .loading,
+  .error,
+  .empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--cor-texto-claro);
+  }
+  
+  .error {
+    color: #d32f2f;
+  }
+  
+  /* =========================================================
+     Responsividade (telas menores)
+     ========================================================= */
+  @media (max-width: 768px) {
+    .layout-inicial {
+      grid-template-columns: 1fr; /* quebra para uma coluna */
+      gap: 2rem;
+    }
+  
+    .texto-inicial h1 {
+      font-size: 2rem; /* título menor em telas pequenas */
+    }
+  
+    .links-navegacao {
+      gap: 1rem;
+    }
+  
+    .topo-rodape {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  
+    .acoes-iniciais {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .acoes-iniciais a {
+      text-align: center;
+    }
+  }
+
+
+
+
+
+
+
+
+
+  /* Container central */
+.container_formes {
+  max-width: 640px;
+  margin: 50px auto;
+
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 26px;
+  color: var(--text);
+  border: solid 2px black;
+  border-radius: 9px;
+  background-color: #f5f7fb;
+}
+
+/* Card do formulário */
+.form-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid #eef2f7;
+  padding: 18px;
+}
+
+/* Campos */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="time"],
+input[type="date"],
+select {
+  padding: 10px 12px;
+  border: 1px solid #d0d7e2;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(30,102,245,0.12);
+}
+
+/* Horários lado a lado */
+.grupo-horario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Ações */
+.acoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+button, .btn {
+  background: #1e66f5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.2s ease, transform 0.05s ease;
+}
+
+button:hover, .btn:hover { background: #0c4bca; }
+button:active, .btn:active { transform: translateY(1px); }
+
+.btn-secondary {
+  background: #eef2f7;
+  color: var(--text);
+}
+.btn-secondary:hover {
+  background: #e3e8f0;
+}
+
+/* Mensagens */
+.mensagem {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.mensagem.sucesso { color: var(--success); }
+.mensagem.erro { color: var(--danger); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fundo escuro por trás do popup */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Caixa do popup */
+.popup {
+  background: #fff;
+  padding: 20px;
+  width: 350px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Botão de fechar (X) */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+ .cartao-prestador {
+    border: 1px solid #ddd; padding: 15px; margin: 10px; border-radius: 8px;
+    background: #f9f9f9;
+  }
+
+
+
+.categoria00{
+
+  align-items: center;
+}
+
+
+
+.video{
+  display: flex;
+  justify-content: center;
+}
+
+video{
+  display: flex;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+  border-radius: 18px;
+
+}
+
+
+
+
+
+
+
+
+
